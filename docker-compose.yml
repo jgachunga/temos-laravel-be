@@ -2,9 +2,12 @@ version: "3.7"
 services:
   app:
     build:
+      # args:
+      #   user: workpay
+      #   uid: 501
       args:
-        user: workpay
-        uid: 501
+        user: gachunga
+        uid: 1000
       context: ./
       dockerfile: ./Dockerfile
     image: laravel-be
