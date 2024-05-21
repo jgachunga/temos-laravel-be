@@ -15,7 +15,7 @@ class LocationHelper
      * @return array
      */
     public function fetchGeocode($lat, $lng){
-        $url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='.$lat.','.$lng.'&sensor=false&key=AIzaSyDBTHu5OY1ICSPGB8D473jwXF5E-mGzud0';
+        $url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='.$lat.','.$lng.'&sensor=false&key= '.env('GOOGLE_API_KEY', '');
         $json = @file_get_contents($url);
         $data = json_decode($json);
         $status = $data->status;
